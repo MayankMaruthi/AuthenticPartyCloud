@@ -659,13 +659,15 @@ h2 {
     gap: 14px;
 }
 
-.addonCard {
-    background: rgba(255, 255, 255, .75);
-    border: 1px solid #e5ddcf;
-    border-radius: 14px;
-    padding: 16px;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, .05);
-    text-align: center;
+.addonCard{
+  background: rgba(255,255,255,.75);
+  border: 1px solid #e5ddcf;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.05);
+  text-align: center;
+  width: 100%;
+  max-width: 260px;   /* keeps cards aligned & centered */
 }
 
 .addonCard h4 {
