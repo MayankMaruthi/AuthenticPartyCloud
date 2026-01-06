@@ -934,18 +934,26 @@ h2 {
 }
 
 /* Small phones */
-@media (max-width: 520px) {
+@media (max-width: 520px){
     .wrap {
         width: min(var(--wrap), calc(100% - 28px));
     }
-
-    .topbar__inner {
+    
+    .topbar__inner{
+        justify-content: center;
         gap: 10px;
     }
 
-    .topbar__left span:last-child {
-        display: none;
+    .topbar__left span:last-child{
+        display: inline;
+        font-size: 12px;
+        white-space: nowrap;
     }
+
+      .topbar__mid{ 
+          display:none; 
+    } /* optional: hides phone number to keep it clean */
+}
 
     /* keeps bar clean */
     .brand__name {
