@@ -648,8 +648,10 @@ h2 {
 }
 
 /* Add-ons */
-.addons {
-    margin-top: 70px;
+.addons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .addons__grid {
