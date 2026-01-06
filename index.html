@@ -1,88 +1,416 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Authentic Party Cloud</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body id="top">
+<body>
+  <div id="top"></div>
 
-<!-- ===== TOP BAR ===== -->
-<div class="topbar">
-  <div class="wrap topbar__inner">
-    <div class="topbar__left">
-      <span class="dot"></span>
-      <span>Events done right — every time.</span>
+  <!-- Top Info Bar -->
+  <div class="topbar">
+    <div class="wrap topbar__inner">
+      <div class="topbar__left">
+        <span class="dot"></span>
+        <span>Events done right — every time.</span>
+      </div>
+      <div class="topbar__mid">
+        <span class="icon">☎</span>
+        <a href="tel:+16785768470">+1 (678) 576-8470</a>
+      </div>
+      <div class="topbar__right">
+        <span>Crafting Unforgettable Moments</span>
+      </div>
     </div>
-    <div class="topbar__mid">
-      <a href="tel:+16785768470">(678) 576-8470</a>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="wrap header__inner">
+      <a class="brand" href="#top">
+        <span class="brand__name">Authentic <em>Party</em> Cloud</span>
+      </a>
+
+      <!-- Hamburger (shows on phones/tablets) -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Desktop + Mobile Nav -->
+      <nav class="nav" id="nav" aria-label="Primary navigation">
+        <!-- NEW: mobile close button (does nothing on desktop) -->
+        <button class="navClose" id="navClose" type="button" aria-label="Close menu">✕</button>
+
+        <a href="#home" class="nav__link is-active">Home</a>
+        <a href="#services" class="nav__link">Services</a>
+        <a href="#plan" class="nav__link">Plan</a>
+        <a href="#gallery" class="nav__link">Gallery</a>
+        <a href="#decor" class="nav__link">Decor</a>
+        <a href="#about" class="nav__link">About</a>
+        <a href="#contact" class="nav__link">Contact</a>
+      </nav>
     </div>
-  </div>
-</div>
+  </header>
 
-<!-- ===== HEADER ===== -->
-<header class="header">
-  <div class="wrap header__inner">
+  <!-- Mobile menu backdrop -->
+  <div class="navBackdrop" id="navBackdrop" aria-hidden="true"></div>
 
-    <div class="brand">
-      Authentic <em>Party</em> Cloud
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero__bg" style="background-image:url('atul-pandey-JVnVeJibk6k-unsplash.jpg')"></div>
+    <div class="hero__overlay"></div>
+
+    <div class="wrap hero__content">
+      <p class="kicker">LUXURY EVENT STUDIO</p>
+      <h1>Crafting Unforgettable <span class="accent">Celebrations</span></h1>
+      <p class="sub">
+        From intimate gatherings to grand celebrations, we transform your vision into elegant experiences
+        with lasting impressions.
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn btn--ghost" href="#gallery">View Gallery</a>
+        <a class="btn btn--ghost" href="#contact">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section section--pad" id="services">
+    <div class="wrap center">
+      <p class="kicker">OUR SERVICES</p>
+      <h2>Everything You Need for the<br />Perfect Celebration</h2>
+      <p class="lead">
+        <strong class="slogan">We plan. We style. You celebrate.</strong>
+      </p>
     </div>
 
-    <!-- Hamburger -->
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <div class="wrap service">
+      <div class="service__text">
+        <div class="service__icon">✨</div>
+        <h3>Full-Service Event Decor & Styling</h3>
+        <p class="muted">
+          Authentic Party Cloud designs and executes beautifully styled celebrations with a premium, cohesive
+          look from start to finish.
+          We handle the creative direction, setup, and finishing touches—so you can enjoy the moment without
+          stress.
+          Whether you want something minimal and elegant or bold and glamorous, we build a design that fits
+          your theme, color palette,
+          and space perfectly.
+        </p>
 
-    <!-- Navigation -->
-    <nav class="nav" id="nav">
-      <button class="navClose" id="navClose" aria-label="Close menu">✕</button>
+        <div class="twoCol">
+          <div>
+            <p class="label">What We Do</p>
+            <ul class="checklist">
+              <li>Theme & color consultation (we help you choose the perfect look)</li>
+              <li>Custom decor planning based on venue size and event type</li>
+              <li>Professional setup, styling, and final “photo-ready” finishing</li>
+            </ul>
+          </div>
 
-      <a href="#home" class="nav__link">Home</a>
-      <a href="#services" class="nav__link">Services</a>
-      <a href="#plan" class="nav__link">Plan</a>
-      <a href="#gallery" class="nav__link">Gallery</a>
-      <a href="#decor" class="nav__link">Decor</a>
-      <a href="#about" class="nav__link">About</a>
-      <a href="#contact" class="nav__link">Contact</a>
-    </nav>
-  </div>
-</header>
+          <div>
+            <p class="label">Designs We Offer</p>
+            <ul class="checklist">
+              <li>Balloon Arch</li>
+              <li>Stage Decor with Artificial Flowers</li>
+              <li>Center Arrangement</li>
+              <li>Artificial Flower Arch</li>
+              <li>Photo Booth</li>
+              <li>Entrance Decor</li>
+              <li>Table & Chair Decor</li>
+              <li>Table Centerpiece</li>
+            </ul>
+          </div>
+        </div>
 
-<div class="navBackdrop" id="navBackdrop"></div>
+        <p class="label">Ideal For</p>
+        <p class="muted small">
+          Birthdays • Baby Showers • Anniversaries • House Warming • Pooja Events • Corporate Gatherings •
+          Surprise Celebrations
+        </p>
 
-<!-- ===== HERO ===== -->
-<section class="hero" id="home">
-  <div class="wrap hero__content">
-    <h1>Crafting <span class="accent">Unforgettable</span> Celebrations</h1>
-    <p class="sub">We plan. We style. You celebrate.</p>
-  </div>
-</section>
+        <div class="service__foot">
+          <span class="price">Starting at <strong>$149.99</strong></span>
+          <a class="btn btn--ghost btn--sm" href="#decor">View Decor →</a>
+        </div>
+      </div>
 
-<!-- ===== PLACEHOLDER SECTIONS ===== -->
-<section class="section" id="services"><div class="wrap center"><h2>Services</h2></div></section>
-<section class="section" id="plan"><div class="wrap center"><h2>Plan</h2></div></section>
-<section class="section" id="gallery"><div class="wrap center"><h2>Gallery</h2></div></section>
-<section class="section" id="decor"><div class="wrap center"><h2>Decor</h2></div></section>
-<section class="section" id="about"><div class="wrap center"><h2>About</h2></div></section>
+      <div class="service__media">
+        <div class="mediaBox" style="background-image:url('IMG_8915.jpg')"></div>
+      </div>
+    </div>
+  </section>
 
-<section class="section" id="contact">
-  <div class="wrap center">
-    <h2>Contact</h2>
-    <p>(678) 576-8470</p>
-    <p>authenticpartycloud@gmail.com</p>
-  </div>
-</section>
+  <!-- PLAN YOUR NEXT EVENT -->
+  <section class="section section--soft section--pad" id="plan">
+    <div class="wrap center">
+      <p class="kicker">PLAN YOUR NEXT EVENT</p>
+      <h2>Plan Your Next Event</h2>
+      <p class="lead">Pick your celebration type and get inspired—this is a show section (no booking form).</p>
+    </div>
 
-<footer class="footer">
-  © <span id="year"></span> Authentic Party Cloud
-</footer>
+    <div class="wrap planNext">
+      <div class="planNext__left">
+        <h3 class="planNext__title">Event Types</h3>
 
-<script src="script.js"></script>
+        <div class="eventTypeGrid">
+          <button class="eventType is-selected" type="button" data-event="Milestone Birthday">Milestone Birthday</button>
+          <button class="eventType" type="button" data-event="Milestone Anniversary">Milestone Anniversary</button>
+          <button class="eventType" type="button" data-event="Baby Shower">Baby Shower</button>
+          <button class="eventType" type="button" data-event="House Warming">House Warming</button>
+          <button class="eventType" type="button" data-event="Pooja">Pooja</button>
+        </div>
+
+        <div class="planNext__pill" aria-live="polite">
+          Selected: <strong id="selectedEventText">Milestone Birthday</strong>
+        </div>
+
+        <p class="muted small planHint">
+          Tip: Click an event type. Later we can swap the picture on the right based on selection.
+        </p>
+      </div>
+
+      <div class="planNext__right">
+        <figure class="gItem planPic" aria-label="Plan section picture placeholder">
+          <img src="IMG_7938.jpg" alt="Plan section placeholder" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section section--soft" id="gallery">
+    <div class="wrap center">
+      <p class="kicker">OUR PORTFOLIO</p>
+      <h2>A Gallery of Beautiful Moments</h2>
+      <p class="lead">Explore our collection of stunning events and celebrations we’ve had the privilege to create.</p>
+    </div>
+
+    <div class="wrap gallery">
+      <figure class="gItem"><img src="dda32fd7-e4bb-457b-b71a-b3fb669c1071.jpg" alt="Decor moment 1" /></figure>
+      <figure class="gItem"><img src="b0c2ce0d-4ee6-4dc4-b5bf-8ffedd1f4ba5.jpg" alt="Decor moment 2" /></figure>
+      <figure class="gItem"><img src="IMG_5684 2.jpg" alt="Decor moment 3" /></figure>
+      <figure class="gItem"><img src="IMG_8912.jpg" alt="Decor moment 4" /></figure>
+      <figure class="gItem"><img src="IMG_8906.jpg" alt="Decor moment 5" /></figure>
+      <figure class="gItem"><img src="IMG_5137.jpg" alt="Decor moment 6" /></figure>
+    </div>
+
+    <div class="wrap center ctaBlock">
+      <h3>Love What You See?</h3>
+      <p class="muted">Let’s create something equally stunning for your celebration.</p>
+      <a class="btn btn--ghost" href="#contact">Contact</a>
+    </div>
+  </section>
+
+  <!-- DECOR -->
+  <section class="section section--pad" id="decor">
+    <div class="wrap center">
+      <p class="kicker">CHOOSE YOUR DECOR</p>
+      <h2>Choose Your Decor</h2>
+      <p class="lead">Click a decor option to compare. Prices shown as ranges (ascending order).</p>
+
+      <div class="packageBar" aria-live="polite">
+        <span class="packageBar__label">Viewing:</span>
+        <span class="packageBar__value" id="selectedPackageText">Cloud Essential</span>
+        <span class="packageBar__sep">•</span>
+        <span class="packageBar__value" id="selectedPackagePrice">$149.99 – $449.99</span>
+      </div>
+    </div>
+
+    <div class="wrap pricing pricing--4" id="pricingGrid">
+      <article class="plan plan--featured" tabindex="0" data-package="Cloud Essential" data-price="$149.99 – $449.99">
+        <p class="plan__cap">STARTING SWEET</p>
+        <h3>Cloud Essential</h3>
+        <p class="plan__price">$149.99 <span>to</span> $449.99</p>
+        <p class="muted small">A simple, elegant touch that elevates your space instantly—clean, classy, and photo-ready.</p>
+        <div class="plan__box">
+          <p class="label">Includes</p>
+          <p class="muted small">Center arrangement</p>
+        </div>
+        <ul class="checklist compact">
+          <li>Color-matched styling</li>
+          <li>Clean premium look</li>
+          <li>Perfect for small setups</li>
+        </ul>
+      </article>
+
+      <article class="plan" tabindex="0" data-package="Cloud Signature" data-price="$499.99 – $849.99">
+        <p class="plan__cap">ELEVATED</p>
+        <h3>Cloud Signature</h3>
+        <p class="plan__price">$499.99 <span>to</span> $849.99</p>
+        <p class="muted small">A fuller decor moment with key highlights your guests notice immediately.</p>
+        <div class="plan__box">
+          <p class="label">Includes</p>
+          <p class="muted small">Center arrangement • Entrance • Table centerpiece</p>
+        </div>
+        <ul class="checklist compact">
+          <li>Balanced focal details</li>
+          <li>Designed for great photos</li>
+          <li>Ideal for mid-size events</li>
+        </ul>
+      </article>
+
+      <article class="plan" tabindex="0" data-package="Cloud Premier" data-price="$999.99 – $2,000+">
+        <p class="plan__cap">PREMIUM</p>
+        <h3>Cloud Premier</h3>
+        <p class="plan__price">$999.99 <span>to</span> $2,000+</p>
+        <p class="muted small">A full-room feel with multiple styled areas—made to look luxurious and intentional.</p>
+        <div class="plan__box">
+          <p class="label">Includes</p>
+          <p class="muted small">Center arrangement • Table centerpiece • Photo booth table & chair decor • Entrance</p>
+        </div>
+        <ul class="checklist compact">
+          <li>Multiple styled zones</li>
+          <li>Higher-impact visual design</li>
+          <li>Great for big celebrations</li>
+        </ul>
+      </article>
+
+      <article class="plan" tabindex="0" data-package="Cloud Luxe" data-price="Call for price">
+        <p class="plan__cap">ULTIMATE</p>
+        <h3>Cloud Luxe</h3>
+        <p class="plan__price">Call <span>for price</span></p>
+        <p class="muted small">The complete experience—crafted with all add-ons and premium upgrades tailored to your vision.</p>
+        <div class="plan__box">
+          <p class="label">Includes</p>
+          <p class="muted small">Complete EVENT PLANNING (with all the below available add-ons)</p>
+        </div>
+        <ul class="checklist compact">
+          <li>Custom concept build</li>
+          <li>Premium styling upgrades</li>
+          <li>Designed to impress</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="wrap addons">
+      <div class="addons__head center">
+        <p class="kicker">ADD-ONS</p>
+        <h2 class="addons__title">Enhance Your Experience</h2>
+        <p class="lead">Add any of the following to your decor. <strong>Call for price</strong>.</p>
+      </div>
+
+      <div class="addons__grid">
+        <div class="addonCard"><h4>Catering</h4><p>Call for price</p></div>
+        <div class="addonCard"><h4>Photography</h4><p>Call for price</p></div>
+        <div class="addonCard"><h4>Videography</h4><p>Call for price</p></div>
+        <div class="addonCard"><h4>DJ</h4><p>Call for price</p></div>
+        <div class="addonCard"><h4>Tables & Chairs</h4><p>Call for price</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section section--soft" id="about">
+    <div class="wrap center">
+      <p class="kicker">ABOUT US</p>
+      <h2>The Story Behind the<br />Celebrations</h2>
+      <p class="lead">Where passion meets precision, and every detail tells your story.</p>
+    </div>
+
+    <div class="wrap about">
+      <div class="about__text">
+        <h3>Creating Magic, One Event at a Time</h3>
+        <p class="muted">
+          Authentic Party Cloud was born from a simple belief: every celebration deserves to be extraordinary.
+          Our decor is designed to photograph beautifully and feel unforgettable in person.
+        </p>
+        <p class="muted">
+          We blend timeless elegance with modern creativity—so your event looks effortless, premium, and unforgettable.
+        </p>
+      </div>
+      <div class="about__media">
+        <div class="mediaBox" style="background-image:url('IMG_5136.jpg')"></div>
+      </div>
+    </div>
+
+    <div class="wrap stats">
+      <div class="stat"><strong>500+</strong><span>Events Designed</span></div>
+      <div class="stat"><strong>8+</strong><span>Years Experience</span></div>
+      <div class="stat"><strong>50+</strong><span>Vendor Partners</span></div>
+      <div class="stat"><strong>98%</strong><span>Client Satisfaction</span></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section--pad" id="contact">
+    <div class="wrap center">
+      <p class="kicker">GET IN TOUCH</p>
+      <h2>Contact Us</h2>
+      <p class="lead">Reach out directly and we’ll respond as soon as possible.</p>
+    </div>
+
+    <div class="wrap contactSingle">
+      <aside class="contact__info">
+        <h4>Contact Information</h4>
+
+        <div class="infoRow">
+          <span class="i">☎</span>
+          <div>
+            <p class="label">Phone</p>
+            <a class="muted" href="tel:+16785768470">+1 (678) 576-8470</a>
+          </div>
+        </div>
+
+        <div class="infoRow">
+          <span class="i">✉</span>
+          <div>
+            <p class="label">Email</p>
+            <a class="muted" href="mailto:authenticpartycloud@gmail.com">authenticpartycloud@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="infoRow">
+          <span class="i">⌁</span>
+          <div>
+            <p class="label">Instagram</p>
+            <a class="muted" href="https://instagram.com/authenticpartycloud" target="_blank" rel="noopener">
+              @authenticpartycloud
+            </a>
+          </div>
+        </div>
+
+        <div class="infoRow">
+          <span class="i">⌁</span>
+          <div>
+            <p class="label">Facebook</p>
+            <a class="muted" href="https://www.facebook.com/profile.php?id=61585752791833" target="_blank" rel="noopener">
+              Visit our Facebook page
+            </a>
+          </div>
+        </div>
+
+        <div class="infoRow">
+          <span class="i">◷</span>
+          <div>
+            <p class="label">Business Hours</p>
+            <p class="muted">Mon–Fri: 9am–6pm<br />Sat: 10am–4pm</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>© <span id="year"></span> Authentic Party Cloud</p>
+      <a href="#top" id="backToTop">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
