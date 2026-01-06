@@ -5,7 +5,6 @@ document.getElementById("year").textContent = new Date().getFullYear();
 const hamburger = document.getElementById("hamburger");
 const nav = document.getElementById("nav");
 const navBackdrop = document.getElementById("navBackdrop");
-const navClose = document.getElementById("navClose");
 
 function setMenu(open) {
   document.body.classList.toggle("menu-open", open);
@@ -35,9 +34,29 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") setMenu(false);
 });
 
-// Close menu on link click
+// ✅ FIX: Close menu first, then scroll (iPhone-safe)
 document.querySelectorAll(".nav__link").forEach(link => {
-  link.addEventListener("click", () => setMenu(false));
+  link.addEventListener("click", (e) => {
+    const href = link.getAttribute("href") || "";
+    if (!href.startsWith("#")) return;
+
+    e.preventDefault();
+
+    const targetId = href.slice(1);
+    const target = document.getElementById(targetId);
+
+    // close menu (unlocks scroll)
+    setMenu(false);
+
+    // wait a tick so iOS applies overflow reset, then scroll
+    window.setTimeout(() => {
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else if (href === "#top" || href === "#") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }, 50);
+  });
 });
 
 // Close if resized up to desktop
