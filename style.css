@@ -132,20 +132,6 @@ body.menu-open .navBackdrop{
   pointer-events:auto;
 }
 
-/* Mobile close button (hidden on desktop) */
-.navClose{
-  display:none;
-  border:1px solid var(--line);
-  background:var(--white);
-  border-radius:12px;
-  width:44px;
-  height:44px;
-  position:absolute;
-  top:18px;
-  right:18px;
-  cursor:pointer;
-}
-
 /* Hero */
 .hero{
   position:relative;
