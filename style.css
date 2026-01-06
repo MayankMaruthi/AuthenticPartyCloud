@@ -108,6 +108,10 @@ img{ max-width:100%; display:block; }
   border-radius:12px;
   width:44px;
   height:44px;
+
+  /* ✅ FIX: keep hamburger clickable above overlay on phones */
+  position:relative;
+  z-index:47;
 }
 .hamburger span{
   display:block;
@@ -639,17 +643,16 @@ h2{
   .mediaBox{ height: 380px; }
 }
 
-/* ✅ FIXED MOBILE NAV (phones/tablets) */
+/* Phones & tablets: mobile menu becomes popup drawer */
 @media (max-width: 820px){
   .hamburger{ display:inline-block; }
 
-  /* nav becomes a RIGHT drawer */
   .nav{
     position:fixed;
     top:0;
     right:0;
     height:100dvh;
-    width:min(360px, 88vw);
+    width:min(360px, 86vw);
     background:rgba(251,250,247,.98);
     border-left:1px solid var(--line);
     box-shadow: var(--shadow);
@@ -657,42 +660,24 @@ h2{
     display:flex;
     flex-direction:column;
     gap:10px;
-
-    /* IMPORTANT: make it off-screen by default */
     transform: translateX(105%);
     transition: transform .22s ease;
     z-index:46;
-
-    /* IMPORTANT: avoid centered weird layout */
-    align-items:stretch;
-    justify-content:flex-start;
   }
 
   body.menu-open .nav{
     transform: translateX(0);
   }
 
-  /* show the close button only on mobile */
-  .navClose{
-    display:inline-grid;
-    place-items:center;
-  }
-
-  /* full width buttons (no centered floating pills) */
   .nav__link{
     display:block;
-    width:100%;
-    text-align:center;
-    padding:14px 12px;
-    border-radius:14px;
-    background:rgba(255,255,255,.7);
+    padding:12px 12px;
+    border-radius:12px;
+    background:rgba(255,255,255,.6);
     border:1px solid #eae2d6;
   }
-
-  /* remove the underline bar in the drawer */
   .nav__link.is-active::after{ display:none; }
 
-  /* layout tweaks (unchanged content) */
   .pricing{ grid-template-columns: 1fr; }
   .hero__content{ padding: 100px 0 70px; }
   .mediaBox{ height: 340px; }
