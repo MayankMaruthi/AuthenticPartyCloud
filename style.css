@@ -816,157 +816,119 @@ h2 {
     text-decoration: none;
 }
 
-/* ===============================
-   BIG DEVICES / TV / DESKTOP
-   Force side-by-side layouts
-================================ */
-@media (min-width: 1200px){
+/* =================================================
+   EXTRA LARGE SCREENS / TV (4K, large monitors)
+================================================= */
+@media (min-width: 1600px){
+  :root{
+    --wrap: 1280px;
+  }
 
-  /* GALLERY: 3 side-by-side */
+  body{
+    font-size: 17px;
+  }
+
   .gallery{
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  /* DECOR PLANS: 4 side-by-side */
   .pricing--4{
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  /* ADD-ONS: all in one centered row */
   .addons__grid{
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: nowrap; /* IMPORTANT: keeps them side-by-side */
-    gap: 28px;
-  }
-
-  .addonCard{
-    flex: 0 0 240px;
+    flex-wrap: nowrap;
   }
 }
 
-/* ===============================
-   PHONES (MOBILE OPTIMIZATION)
-================================ */
+/* =================================================
+   LAPTOPS / DESKTOPS (standard)
+================================================= */
+@media (min-width: 1200px) and (max-width: 1599px){
+
+  .gallery{
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pricing--4{
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .addons__grid{
+    flex-wrap: nowrap;
+  }
+}
+
+/* =================================================
+   TABLETS (iPad / landscape tablets)
+================================================= */
+@media (max-width: 1024px){
+
+  .gallery{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricing--4{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .planNext{
+    grid-template-columns: 1fr;
+  }
+
+  .stats{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =================================================
+   PHONES (standard smartphones)
+================================================= */
 @media (max-width: 640px){
 
-  /* GENERAL SPACING */
-  .section--pad{
-    padding:64px 0;
+  .gallery{
+    grid-template-columns: 1fr;
   }
 
-  h2{
-    font-size:28px;
-    line-height:1.15;
+  .pricing,
+  .pricing--4{
+    grid-template-columns: 1fr;
   }
 
-  .lead{
-    font-size:14px;
-    line-height:1.6;
-  }
-
-  /* HERO */
-  .hero__content{
-    padding:80px 0 60px;
+  .addons__grid{
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero h1{
-    font-size:34px;
+    font-size: 34px;
   }
 
-  /* NAV (mobile dropdown already handled) */
-  .nav.is-open{
-    gap:8px;
-  }
-
-  /* PLAN YOUR EVENT */
-  .planNext{
-    grid-template-columns:1fr;
-    gap:28px;
-  }
-
-  .planNext__right{
-    order:-1; /* image shows first on phone */
-  }
-
-  .planPic img{
-    height:240px;
-  }
-
-  /* GALLERY: ONE PER ROW */
-  .gallery{
-    grid-template-columns:1fr;
-    gap:20px;
-  }
-
-  .gItem img{
-    height:240px;
-  }
-
-  /* DECOR PACKAGES: STACKED, FULL WIDTH */
-  .pricing,
-  .pricing--4{
-    grid-template-columns:1fr;
-    gap:20px;
-  }
-
-  .plan{
-    padding:20px;
-  }
-
-  .plan h3{
-    font-size:24px;
-  }
-
-  .plan__price{
-    font-size:20px;
-  }
-
-  /* ADD-ONS: STACKED & CENTERED */
-  .addons__grid{
-    flex-direction:column;
-    align-items:center;
-    gap:18px;
-  }
-
-  .addonCard{
-    width:100%;
-    max-width:320px;
-  }
-
-  /* CONTACT */
-  .contactSingle{
-    margin-top:36px;
-  }
-
-  .contact__info{
-    padding:20px;
-  }
-
-  /* FOOTER */
-  .footer__inner{
-    flex-direction:column;
-    gap:10px;
-    text-align:center;
+  .section--pad{
+    padding: 64px 0;
   }
 }
 
-/* EXTRA SMALL PHONES */
+/* =================================================
+   SMALL PHONES (iPhone SE, very small screens)
+================================================= */
 @media (max-width: 420px){
 
+  body{
+    font-size: 14px;
+  }
+
   .hero h1{
-    font-size:30px;
+    font-size: 30px;
   }
 
-  .addonCard{
-    max-width:100%;
+  .gItem img,
+  .planPic img{
+    height: 220px;
   }
 
-  .planPic img,
-  .gItem img{
-    height:220px;
+  .addonCard,
+  .plan{
+    padding: 18px;
   }
 }
