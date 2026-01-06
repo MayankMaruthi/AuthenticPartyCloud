@@ -30,9 +30,6 @@ hamburger?.addEventListener("click", () => {
 // Close when clicking backdrop
 navBackdrop?.addEventListener("click", () => setMenu(false));
 
-// ✅ Close when clicking X button
-navClose?.addEventListener("click", () => setMenu(false));
-
 // Close on ESC
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") setMenu(false);
