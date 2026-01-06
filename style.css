@@ -847,3 +847,126 @@ h2 {
     flex: 0 0 240px;
   }
 }
+
+/* ===============================
+   PHONES (MOBILE OPTIMIZATION)
+================================ */
+@media (max-width: 640px){
+
+  /* GENERAL SPACING */
+  .section--pad{
+    padding:64px 0;
+  }
+
+  h2{
+    font-size:28px;
+    line-height:1.15;
+  }
+
+  .lead{
+    font-size:14px;
+    line-height:1.6;
+  }
+
+  /* HERO */
+  .hero__content{
+    padding:80px 0 60px;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  /* NAV (mobile dropdown already handled) */
+  .nav.is-open{
+    gap:8px;
+  }
+
+  /* PLAN YOUR EVENT */
+  .planNext{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .planNext__right{
+    order:-1; /* image shows first on phone */
+  }
+
+  .planPic img{
+    height:240px;
+  }
+
+  /* GALLERY: ONE PER ROW */
+  .gallery{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .gItem img{
+    height:240px;
+  }
+
+  /* DECOR PACKAGES: STACKED, FULL WIDTH */
+  .pricing,
+  .pricing--4{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .plan{
+    padding:20px;
+  }
+
+  .plan h3{
+    font-size:24px;
+  }
+
+  .plan__price{
+    font-size:20px;
+  }
+
+  /* ADD-ONS: STACKED & CENTERED */
+  .addons__grid{
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+  }
+
+  .addonCard{
+    width:100%;
+    max-width:320px;
+  }
+
+  /* CONTACT */
+  .contactSingle{
+    margin-top:36px;
+  }
+
+  .contact__info{
+    padding:20px;
+  }
+
+  /* FOOTER */
+  .footer__inner{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+  }
+}
+
+/* EXTRA SMALL PHONES */
+@media (max-width: 420px){
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .addonCard{
+    max-width:100%;
+  }
+
+  .planPic img,
+  .gItem img{
+    height:220px;
+  }
+}
