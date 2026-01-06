@@ -935,9 +935,6 @@ h2 {
 
 /* Small phones */
 @media (max-width: 520px){
-    .wrap {
-        width: min(var(--wrap), calc(100% - 28px));
-    }
     
     .topbar__inner{
         justify-content: center;
