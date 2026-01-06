@@ -641,46 +641,51 @@ h2{
   .mediaBox{ height: 380px; }
 }
 
-/* Phones & tablets: mobile menu becomes popup drawer */
-@media (max-width: 820px){
-  .hamburger{ display:inline-block; }
+/* ===============================
+   FIX MOBILE MENU (iPhone/Phones)
+   Makes the menu clean + full screen
+================================ */
+@media (max-width: 520px){
 
-  /* turn nav into a slide-in popup */
+  /* Backdrop: darker so the menu stands out */
+  .navBackdrop{
+    background: rgba(0,0,0,.55);
+  }
+
+  /* Fullscreen menu panel */
   .nav{
-    position:fixed;
-    top:0;
-    right:0;
-    height:100dvh;
-    width:min(360px, 86vw);
-    background:rgba(251,250,247,.98);
-    border-left:1px solid var(--line);
-    box-shadow: var(--shadow);
-    padding: 86px 18px 18px;
-    display:flex;             /* keep it flex, but off-canvas */
-    flex-direction:column;
-    gap:10px;
-    transform: translateX(105%);
-    transition: transform .22s ease;
-    z-index:46;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    left: 0 !important;
+    right: 0 !important;
+    border-left: none !important;
+
+    /* Solid background so it doesn't look grey */
+    background: #fbfaf7 !important;
+    opacity: 1 !important;
+
+    /* Better spacing */
+    padding: 92px 18px 22px !important;
   }
 
-  body.menu-open .nav{
-    transform: translateX(0);
-  }
-
+  /* Make links full width and centered */
   .nav__link{
-    display:block;
-    padding:12px 12px;
-    border-radius:12px;
-    background:rgba(255,255,255,.6);
-    border:1px solid #eae2d6;
-  }
-  .nav__link.is-active::after{ display:none; }
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    padding: 14px 12px;
 
-  /* content layout tweaks */
-  .pricing{ grid-template-columns: 1fr; }
-  .hero__content{ padding: 100px 0 70px; }
-  .mediaBox{ height: 340px; }
+    background: #ffffff !important;
+    border: 1px solid #e6dfd3 !important;
+  }
+
+  /* Make sure menu is ABOVE everything */
+  body.menu-open .nav{
+    z-index: 9999 !important;
+  }
+  body.menu-open .navBackdrop{
+    z-index: 9998 !important;
+  }
 }
 
 /* Phones */
